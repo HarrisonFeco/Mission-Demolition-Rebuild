@@ -348,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367387321412673098}
   - component: {fileID: 3375642692221905642}
+  - component: {fileID: 2741479046375802055}
   m_Layer: 0
   m_Name: Slingshot
   m_TagString: Untagged
@@ -387,3 +388,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &2741479046375802055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866974430364846524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55246c2e9af10848a2e0a89ca1931ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5415848110827935729, guid: cae4a4fee126a2847a0ca71815385e34, type: 3}
+  velocityMult: 10
+  projLinePrefab: {fileID: 9037819343597882126, guid: 8b814dd592e003a44b0cf304ffb97321, type: 3}
+  launchPoint: {fileID: 4794837357065093893}
+  launchPos: {x: 0, y: 0, z: 0}
+  projectile: {fileID: 5415848110827935729, guid: cae4a4fee126a2847a0ca71815385e34, type: 3}
+  aimingMode: 0
