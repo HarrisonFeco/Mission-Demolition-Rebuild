@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uitLevel: {fileID: 363299629}
   uitShots: {fileID: 1606304176}
-  castlePos: {x: 50, y: -9.5, z: 0}
+  castlePos: {x: 50, y: -11.5, z: 0}
   castles:
   - {fileID: 8634418452370356261, guid: 0a5cb48fd44dcfb4ea3cbbb82bc81042, type: 3}
   - {fileID: 8634418452370356261, guid: c698edb941850ca4984bee7847e345d0, type: 3}
