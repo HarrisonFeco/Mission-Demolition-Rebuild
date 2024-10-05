@@ -64,7 +64,7 @@ public class FollowCam : MonoBehaviour
                 nextView = eView.castle;
                 break;
             case eView.castle:
-                // POI = MissionDemolition.GET_CASTLE();
+                POI = MissionDemolition.GET_CASTLE();
                 nextView = eView.both;
                 break;
             case eView.both:
