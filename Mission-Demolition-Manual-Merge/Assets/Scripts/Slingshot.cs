@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+
     [Header("Inscribed")]
     public GameObject projectilePrefab;
     public float velocityMult = 10f;
@@ -14,23 +15,27 @@ public class Slingshot : MonoBehaviour
     public GameObject projectile;
     public bool aimingMode;
 
+    
+    public AudioClip clickSound; 
+    public AudioClip releaseSound; 
+    private AudioSource audioSource; 
+
     void Awake()
     {
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position;
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void OnMouseEnter()
     {
-        //print("Slingshot:OnMouse Enter()");
         launchPoint.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        //print("Slingshot:OnMouse Exit()");
         launchPoint.SetActive(true);
     }
 
@@ -40,17 +45,19 @@ public class Slingshot : MonoBehaviour
         projectile = Instantiate(projectilePrefab) as GameObject;
         projectile.transform.position = launchPos;
         projectile.GetComponent<Rigidbody>().isKinematic = true;
+        if (clickSound != null)
+        {
+           audioSource.PlayOneShot(clickSound);
+        }
     }
 
     void Update()
     {
         if (!aimingMode) return;
-
         Vector3 mousePos2D = Input.mousePosition;
         mousePos2D.z = -Camera.main.transform.position.z;
         Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
-
-        Vector3 mouseDelta = mousePos3D -launchPos;
+        Vector3 mouseDelta = mousePos3D - launchPos;
         float maxMagnitude = this.GetComponent<SphereCollider>().radius;
         if (mouseDelta.magnitude > maxMagnitude)
         {
@@ -59,7 +66,6 @@ public class Slingshot : MonoBehaviour
         }
         Vector3 projPos = launchPos + mouseDelta;
         projectile.transform.position = projPos;
-
         if (Input.GetMouseButtonUp(0))
         {
             aimingMode = false;
@@ -67,7 +73,11 @@ public class Slingshot : MonoBehaviour
             projRB.isKinematic = false;
             projRB.collisionDetectionMode = CollisionDetectionMode.Continuous;
             projRB.velocity = -mouseDelta * velocityMult;
-            
+            if (releaseSound != null)
+            {
+                audioSource.PlayOneShot(releaseSound);
+            }
+
             FollowCam.SWITCH_VIEW(FollowCam.eView.slingshot);
 
             FollowCam.POI = projectile;
