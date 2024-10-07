@@ -186,9 +186,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741479046375802055, guid: 693601ae1f57a484b96c71e618acb310, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fead1579413b2dc468b09f854937cea3, type: 3}
+    - target: {fileID: 2741479046375802055, guid: 693601ae1f57a484b96c71e618acb310, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2741479046375802055, guid: 693601ae1f57a484b96c71e618acb310, type: 3}
+      propertyPath: releaseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f5d35972c35487748b82d16f6642d134, type: 3}
     - target: {fileID: 7866974430364846524, guid: 693601ae1f57a484b96c71e618acb310, type: 3}
       propertyPath: m_Name
       value: Slingshot
