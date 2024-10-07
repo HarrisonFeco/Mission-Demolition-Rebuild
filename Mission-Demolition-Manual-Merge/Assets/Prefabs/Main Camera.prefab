@@ -102,7 +102,7 @@ MonoBehaviour:
   uitShots: {fileID: 0}
   castlePos: {x: 50, y: -11.5, z: 0}
   castles:
-  - {fileID: 8634418452370356261, guid: 0a5cb48fd44dcfb4ea3cbbb82bc81042, type: 3}
+  - {fileID: 0}
   - {fileID: 8634418452370356261, guid: a7bda79ed018d4a408951418cb1b6381, type: 3}
   - {fileID: 8634418452370356261, guid: f0052b086e010634e80c8bea7fd80f2a, type: 3}
   - {fileID: 8634418452370356261, guid: 8778eb1c7e7e81d4e8de0f89e49c7bdd, type: 3}
